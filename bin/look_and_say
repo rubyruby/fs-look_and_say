@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/sequence'
+require_relative '../lib/options'
 
-sequence = Sequence.new('1')
+options = Options.parse(ARGV)
+sequence = Sequence.new(options.start_value)
 puts sequence.current_value
-5.times.each { puts sequence.next_value }
+(options.sequence_length - 1).times.each { puts sequence.next_value }
