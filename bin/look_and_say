@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/sequence'
+
+sequence = Sequence.new('1')
+puts sequence.current_value
+5.times.each { puts sequence.next_value }
