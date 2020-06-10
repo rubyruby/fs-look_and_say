@@ -10,11 +10,13 @@ class Options
   attr_accessor :start_value, :sequence_length
 
   def self.parse(args)
+    parser = OptionParser.new
     options = Options.new
-    OptionParser.new { |parser| options.define_options(parser) }.parse!(args)
+    options.define_options(parser)
+    parser.parse!(args)
     options
   rescue OptionParser::ParseError => e
-    abort(e.message)
+    abort("#{e.message}\n#{parser}")
   end
 
   def initialize
