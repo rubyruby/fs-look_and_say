@@ -5,7 +5,7 @@ require 'optparse'
 class Options
 
   DEFAULT_START_VALUE = '1'
-  DEFAULT_SEQUENCE_LENGTH = 5
+  DEFAULT_SEQUENCE_LENGTH = 6
 
   attr_accessor :start_value, :sequence_length
 

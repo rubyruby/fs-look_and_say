@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/sequence'
-require_relative '../lib/options'
+require_relative '../lib/application'
 
-options = Options.parse(ARGV)
-sequence = Sequence.new(options.start_value)
-puts sequence.current_value
-(options.sequence_length - 1).times.each { puts sequence.next_value }
+Application.run(ARGV)
