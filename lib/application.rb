@@ -3,9 +3,10 @@
 require_relative './sequence'
 require_relative './options'
 
-class Application
+module Application
+  module_function
 
-  def self.run(args)
+  def run(args)
     options = Options.parse(args)
     sequence = Sequence.new(options.start_value)
     puts options.start_value
